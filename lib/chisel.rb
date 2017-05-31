@@ -33,6 +33,7 @@ my_output.close
 #output info
 puts "Converted my_input.markdown (#{my_input_count} lines) to my_output.html (#{my_output_count} lines)"
 
+
 #class MarkdownCoverter
 
 # end
