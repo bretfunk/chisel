@@ -2,9 +2,7 @@
 
 #load file
 my_input_count = 0
-my_input = File.open(ARGV[0], 'r') #{|f| count = f.read.count("\n")}
-
-#read file
+my_input = File.open(ARGV[0], 'r')
 convert_file = my_input.read
 my_input.close
 
@@ -20,7 +18,9 @@ convert_file.split("\n").each do |sentence|
     filtered_text << sentence
     filtered_text << "</h2>"
   else
+    filtered_text << "<p>"
     filtered_text << sentence
+    filtered_text << "</p>"
   end
 end
 
@@ -35,10 +35,4 @@ puts "Converted my_input.markdown (#{my_input_count} lines) to my_output.html (#
 
 #class MarkdownCoverter
 
-# def clean_up(file)
-#   file.chars.each do |letter|
-#     if "."
-#       "!!!!!!"
-#     end
-#   end
 # end
