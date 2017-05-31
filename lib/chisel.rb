@@ -1,32 +1,28 @@
-#$ ruby ./lib/chisel.rb my_input.markdown my_output.html
+# input:  ruby ./lib/chisel.rb my_input.markdown my_output.html
 
-#read in my_input markdown
-for arg in ARGV
-   puts arg
-end
+#load file
+my_input_count = 0
+my_input = File.open(ARGV[0], 'r') #{|f| count = f.read.count("\n")}
 
-#covert file
+#read file
+convert_file = my_input.read
+my_input.close
 
+#convert file
+html_text = convert_file.upcase
 
-#create my_output
-new_file = File.open(<filename>, "w")
-new_file.write("text")
+#output file
+my_output_count = 0
+my_output = File.open(ARGV[1], 'w')
+my_output.write(html_text)
+my_output.close
 
+#output info
+puts "Converted my_input.markdown (#{my_input_count} lines) to my_output.html (#{my_output_count} lines)"
 
 class MarkdownCoverter
 
-File.open(ARGV[0], "w"){ |somefile| somefile.puts "Hello file!"}
-
-
-contents = File.open("sample.txt", "r"){ |file| file.read }
-puts contents
-
-
-
 
 
 
 end
-
-#output
-puts "Converted my_input.markdown (6 lines) to my_output.html (8 lines)"
